@@ -1,4 +1,4 @@
-import { Avatar } from "@mantine/core";
+import { Avatar, Indicator } from "@mantine/core";
 import {IconBell, IconRun, IconSettings } from "@tabler/icons-react";
 
 const Header=()=>{
@@ -22,7 +22,9 @@ const Header=()=>{
                 <IconSettings stroke={1.5}/>
             </div>
             <div className="bg-mine-shaft-900 p-1.5 rounded-full">
-                <IconBell  stroke={1.5}/>
+                    <Indicator color="royal-purple.4" offset={6}  size={8} processing>
+                        <IconBell  stroke={1.5}/>
+                    </Indicator>
             </div>
 
         </div>
