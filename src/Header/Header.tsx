@@ -1,5 +1,6 @@
-import { Avatar, Indicator } from "@mantine/core";
+import { Avatar, Indicator, NavLink } from "@mantine/core";
 import {IconBell, IconRun, IconSettings } from "@tabler/icons-react";
+import NavLinks from "./NavLinks";
 
 const Header=()=>{
     return <div className="w-full bg-mine-shaft-950 px-6 text-white h-20 flex justify-between items-center ">
@@ -7,12 +8,7 @@ const Header=()=>{
             <IconRun className="h-8 w-8 " stroke={2.5}/>
             <div className="text-3xl font-semibold">ReferVerse</div>
         </div>
-        <div className="flex gap-5">
-            <a href="">Find Job</a>
-            <a href="">Find Talent</a>
-            <a href="">Upload Jobs</a>
-            <a href="">About Us</a>
-        </div>
+        {NavLinks()}
         <div  className="flex gap-3 items-center">
                 <div className="flex items-center gap-2">
                     <div>Pawan</div>
