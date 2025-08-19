@@ -1,10 +1,10 @@
-export const companies = [
+ const companies = [
   "Google", "Amazon", "Meta",
   "Microsoft", "Pinterest", "Slack", "Oracle", "Walmart", "Apple"
 ];
 
 
-export const jobCategory = [
+ const jobCategory = [
 
   {
     name: "Software Engineer",
@@ -60,7 +60,7 @@ export const jobCategory = [
   }
 ];
 
-export const work = [
+ const work = [
   {
     name: "Build Your Resume",
     desc: "Create a standout resume with your skills."
@@ -75,7 +75,7 @@ export const work = [
   }
 ];
 
-export const testimonials = [
+ const testimonials = [
   {
     "name": "Udit Dagar",
     "testimonial": "This job portal made job search easy and quick. Recommended to all job seekers!",
@@ -107,4 +107,13 @@ export const testimonials = [
     "rating": 5
   }
 ];
+
+const footerLinks = [
+  { title: "Product", links: ["Find Job", "Find Company", "Find Employee"] },
+  { title: "Company", links: ["About Us", "Contact Us", "Privacy Policy", "Terms & Conditions"] },
+  { title: "Support", links: ["Help & Support", "Feedback", "FAQs"] }
+];
+
+export { companies, jobCategory, work, testimonials, footerLinks };
+
 
