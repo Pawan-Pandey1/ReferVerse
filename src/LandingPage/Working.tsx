@@ -1,4 +1,5 @@
 import { work } from "../Data/Data";
+import { Avatar } from '@mantine/core';
 
 const Working = () => (
   <div className="mt-20 pb-5">
@@ -8,9 +9,14 @@ const Working = () => (
     <div className="text-lg mb-10 mx-auto text-mine-shaft-300 text-center w-1/2">
       Explore tailored job opportunities aligned with your skills. Start your career journey today!
     </div>
-    <div className="flex px-16 justify-between items-center">
-      <div>
+    <div className="flex px-16 justify-between items-center gap-1">
+      <div className="relative">
         <img className="w-[20rem]" src="/Working/girlReferral.png" alt="girl" />
+        <div className="w-36 flex top-[30%] right-[-60px] absolute flex-col items-center border border-royal-purple-400 rounded-xl py-3 px-1 backdrop-blur-md">
+           <Avatar className="!h-16 !w-16" src="avatar.png" alt="it's me" />
+            <div className="text-sm font-semibold text-mine-shaft-200 text-center">Complete your profile</div>
+            <div className="text-xs text-mine-shaft-300">70% Completed</div>
+        </div>
       </div>
       <div className="flex flex-col gap-10">
             {
