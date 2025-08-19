@@ -74,3 +74,37 @@ export const work = [
     desc: "Connect with employers and start your new job."
   }
 ];
+
+export const testimonials = [
+  {
+    "name": "Udit Dagar",
+    "testimonial": "This job portal made job search easy and quick. Recommended to all job seekers!",
+    "rating": 5
+  },
+  {
+    "name": "Arjun Deshta",
+    "testimonial": "Found my dream job within a week! The application process was smooth.",
+    "rating": 5
+  },
+  {
+    "name": "Ashutosh Dwiwedi",
+    "testimonial": "I secured a job offer within days of applying. Exceptional user experience and support.",
+    "rating": 4
+  },
+  {
+    "name": "Pratik Kumar",
+    "testimonial": "The platform is user-friendly and has plenty of job opportunities. Very happy with my experience.",
+    "rating": 5
+  },
+  {
+    "name": "Abhinav Prakash Verma",
+    "testimonial": "Great resource for both freshers and experienced professionals. Helped me land a role quickly.",
+    "rating": 4
+  },
+  {
+    "name": "Khushi Dhoble",
+    "testimonial": "Amazing experience! The portal guided me step by step and made the job search stress-free.",
+    "rating": 5
+  }
+];
+
