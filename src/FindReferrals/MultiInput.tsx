@@ -1,4 +1,4 @@
-import { Checkbox, CheckIcon, Combobox, Group, Input, Pill, PillsInput, useCombobox } from '@mantine/core';
+import { Checkbox, CheckIcon, Combobox, Group, Input, Pill, PillsInput, useCombobox, ScrollArea } from '@mantine/core';
 import { IconSearch, IconSelector } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
 
@@ -82,24 +82,29 @@ const options = data.filter((item) => item.toLowerCase().includes(search.trim().
         </PillsInput>
       </Combobox.DropdownTarget>
 
-      <Combobox.Dropdown>
-        <Combobox.Search
-            value={search}
-            onChange={(event) => setSearch(event.currentTarget.value)}
-            placeholder="Search groceries"
-          />
-        <Combobox.Options>
-          {options}
+<Combobox.Dropdown>
+  <Combobox.Search
+    value={search}
+    onChange={(event) => setSearch(event.currentTarget.value)}
+    placeholder="Search"
+  />
 
-          {!exactOptionMatch && search.trim().length > 0 && (
-            <Combobox.Option value="$create">+ Create {search}</Combobox.Option>
-          )}
+  {/* Show ~5 items, rest scroll */}
+  <ScrollArea.Autosize mah={160} type="auto">
+    <Combobox.Options>
+      {options}
 
-          {exactOptionMatch && search.trim().length > 0 && options.length === 0 && (
-            <Combobox.Empty>Nothing found</Combobox.Empty>
-          )}
-        </Combobox.Options>
-      </Combobox.Dropdown>
+      {!exactOptionMatch && search.trim().length > 0 && (
+        <Combobox.Option value="$create">+ Create {search}</Combobox.Option>
+      )}
+
+      {exactOptionMatch && search.trim().length > 0 && options.length === 0 && (
+        <Combobox.Empty>Nothing found</Combobox.Empty>
+      )}
+    </Combobox.Options>
+  </ScrollArea.Autosize>
+</Combobox.Dropdown>
+
     </Combobox>
   );
 }

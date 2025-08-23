@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import FindReferrals from './Pages/FindReferrals';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
+import OfferRefferalsPage from './Pages/OfferReferralsPage';
 
 function App() {
   const theme=createTheme({
@@ -23,6 +24,7 @@ function App() {
       <Header/>
         <Routes>
           <Route path='/find-referrals' element={<FindReferrals/>}/>
+          <Route path='/Offer-referrals' element={<OfferRefferalsPage/>}/>
           <Route path='*' element={<HomePage />} />
         </Routes>
       <Footer/>
