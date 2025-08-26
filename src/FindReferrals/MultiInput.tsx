@@ -82,28 +82,28 @@ const options = data.filter((item) => item.toLowerCase().includes(search.trim().
         </PillsInput>
       </Combobox.DropdownTarget>
 
-<Combobox.Dropdown>
-  <Combobox.Search
-    value={search}
-    onChange={(event) => setSearch(event.currentTarget.value)}
-    placeholder="Search"
-  />
+    <Combobox.Dropdown>
+      <Combobox.Search
+        value={search}
+        onChange={(event) => setSearch(event.currentTarget.value)}
+        placeholder="Search"
+      />
 
-  {/* Show ~5 items, rest scroll */}
-  <ScrollArea.Autosize mah={160} type="auto">
-    <Combobox.Options>
-      {options}
+      {/* Show ~5 items, rest scroll */}
+      <ScrollArea.Autosize mah={160} type="auto">
+        <Combobox.Options>
+          {options}
 
-      {!exactOptionMatch && search.trim().length > 0 && (
-        <Combobox.Option value="$create">+ Create {search}</Combobox.Option>
-      )}
+          {!exactOptionMatch && search.trim().length > 0 && (
+            <Combobox.Option value="$create">+ Create {search}</Combobox.Option>
+          )}
 
-      {exactOptionMatch && search.trim().length > 0 && options.length === 0 && (
-        <Combobox.Empty>Nothing found</Combobox.Empty>
-      )}
-    </Combobox.Options>
-  </ScrollArea.Autosize>
-</Combobox.Dropdown>
+          {exactOptionMatch && search.trim().length > 0 && options.length === 0 && (
+            <Combobox.Empty>Nothing found</Combobox.Empty>
+          )}
+        </Combobox.Options>
+      </ScrollArea.Autosize>
+    </Combobox.Dropdown>
 
     </Combobox>
   );

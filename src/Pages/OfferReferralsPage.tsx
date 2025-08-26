@@ -1,5 +1,7 @@
 import { Divider } from "@mantine/core";
 import SearchBar from "../OfferRefferals/SearchBar";
+import TalentCard from "../OfferRefferals/TalentCard";
+import Talents from "../OfferRefferals/Talents";
 
 
 const OfferRefferalsPage=()=>{
@@ -8,6 +10,7 @@ const OfferRefferalsPage=()=>{
         <Divider size="xs" mx="md"/>
         <SearchBar/>
         <Divider size="xs" mx="md"/>
+        <Talents/>
     </div>
     )
 
