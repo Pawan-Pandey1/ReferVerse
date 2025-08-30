@@ -8,6 +8,7 @@ import FindReferrals from './Pages/FindReferrals';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import OfferRefferalsPage from './Pages/OfferReferralsPage';
+import TalentProfilePage from './Pages/TalentProfilePage';
 
 function App() {
   const theme=createTheme({
@@ -25,6 +26,7 @@ function App() {
         <Routes>
           <Route path='/find-referrals' element={<FindReferrals/>}/>
           <Route path='/Offer-referrals' element={<OfferRefferalsPage/>}/>
+          <Route path='/Talent-Profile' element={<TalentProfilePage/>}/>
           <Route path='*' element={<HomePage />} />
         </Routes>
       <Footer/>
