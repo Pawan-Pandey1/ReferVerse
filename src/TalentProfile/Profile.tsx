@@ -4,7 +4,7 @@ import ExpCard from "./ExpCard";
 import CertiCard from "./CertiCard";
 
 const Profile=(props:any)=>{
-    return  <div className="w-2/3">
+    return  <div className="">
         <div className="relative">
             <img className="rounded-t-2xl" src="/Profile/BannerImage.png" alt="" />
             <img className="h-48 w-48 rounded-full -bottom-1/3 absolute left-3 border-mine-shaft-950 border-8" src="/avatar.png" alt="" />
