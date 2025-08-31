@@ -1,8 +1,9 @@
-import { TagsInput } from "@mantine/core";
+import { Button, TagsInput } from "@mantine/core";
 import { fields } from "../Data/PostJob";
 import SelectInput from "./SelectInput";
 import { RichTextEditor } from "@mantine/tiptap";
 import TextEditor from "./TextEditor";
+import { IconArrowLeft } from "@tabler/icons-react";
 
 const PostJob=()=>{
     const select=fields;
@@ -22,10 +23,28 @@ const PostJob=()=>{
                 <SelectInput {...select[5]}/>
             </div>
             <TagsInput withAsterisk label="Skills" placeholder="Enter Skill" clearable acceptValueOnBlur splitChars={[',', ' ', '|']}/>
-            <div>
-                <div className="text-sm font-medium">Job Discription</div>
-                <TextEditor/>
-            </div>
+
+        <div className="[&_*[data-active='true']]:!text-royal-purple-400 [&_*[data-active='true']]:!bg-royal-purple-400/20">
+        <div className="text-sm font-medium">Job Description</div>
+        <TextEditor />
+        </div>
+
+        <div className="flex gap-4">
+        <Button
+          color="royal-purple.4"
+          variant="light"
+        >
+          Publish Job
+        </Button> 
+
+        <Button
+          color="royal-purple.4"
+          variant="outline"
+        >
+          Save as Draft
+        </Button>           
+        </div>
+
         </div>
 
     </div>
