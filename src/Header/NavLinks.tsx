@@ -4,7 +4,7 @@ const NavLinks = () => {
    const links = [
     { name: "Find Referrals", url: "find-referrals" },
     { name: "Offer Referrals", url: "offer-referrals" },
-    { name: "Post Opportunities", url: "post-opportunities" },
+    { name: "Post Job", url: "post-job" },
     { name: "About Us", url: "about-us" },
   ];
 
