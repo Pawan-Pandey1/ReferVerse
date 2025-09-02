@@ -148,6 +148,7 @@ const talents = [
     image: "Avatars/Female1.png",
   },
 ];
+
 const profile = [
   {
     name: "Aarav Mehta",
