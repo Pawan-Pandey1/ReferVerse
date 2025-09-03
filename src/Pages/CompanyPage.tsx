@@ -3,6 +3,7 @@ import { IconArrowLeft } from "@tabler/icons-react";
 import { Link, useNavigate } from "react-router-dom";
 import Company from "../Company Profile/Company";
 import CompanyJobs from "../Company Profile/CompanyJobs";
+import SimilarCompanies from "../Company Profile/SimilarCompanies";
 
 const CompanyPage=()=>{
     const navigate=useNavigate();
@@ -18,8 +19,9 @@ const CompanyPage=()=>{
         >
           Back
         </Button>
-        <div className="flex gap-5">
+        <div className="flex gap-5 justify-between">
             <Company/>
+            <SimilarCompanies/>
         </div>
     </div>
 }

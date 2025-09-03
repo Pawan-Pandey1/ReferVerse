@@ -17,5 +17,49 @@ const companyData = {
   ]
 };
 
-export {companyData};
+const similar = [
+  {
+    name: "Meta",
+    employees: 58604,
+  },
+  {
+    name: "Netflix",
+    employees: 12800,
+  },
+  {
+    name: "Microsoft",
+    employees: 221000,
+  },
+  {
+    name: "Amazon",
+    employees: 1608000,
+  },
+  {
+    name: "Apple",
+    employees: 161000,
+  },
+  {
+    name: "Figma",
+    employees: 850,
+  },
+  {
+    name: "Oracle",
+    employees: 164000,
+  },
+  {
+    name: "Pinterest",
+    employees: 3900,
+  },
+  {
+    name: "Slack",
+    employees: 2500,
+  },
+  {
+    name: "Walmart",
+    employees: 2300000,
+  },
+];
+
+
+export {companyData, similar};
 
