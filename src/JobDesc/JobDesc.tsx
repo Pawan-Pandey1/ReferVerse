@@ -7,7 +7,7 @@ import DOMPurify from 'dompurify';
 
 const JobDesc=()=>{
     const data=DOMPurify.sanitize(desc);
-    return <div className="w-2/3">
+    return <div className="">
         <div className="flex justify-between">
         <div className="flex gap-2 items-center">
           <div className="p-3 bg-mine-shaft-800 rounded-xl">
