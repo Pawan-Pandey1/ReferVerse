@@ -86,7 +86,7 @@ const JobDesc=()=>{
                 </div>
               </div>
               <div >
-                  <Link to="">
+                  <Link to="/company">
                       <Button color="royal-purple.4" variant="light">Company Page</Button> 
                   </Link>
               </div> 
