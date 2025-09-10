@@ -46,9 +46,10 @@ const TalentCard = (props: any) => {
       </Text>
 
       <Divider size="xs" color="mine-shaft.7" />
-
-      {/* CTC + Location */}
-      <div className="flex justify-between items-center">
+      {
+        props.invited ? <div className="flex gap-1 text-mine-shaft-200 text-sm items-center">
+          <IconCalendarMonth stroke={1.5} /> Interview : November 27, 2025 10:00 AM
+        </div>:<div className="flex justify-between items-center">
         <div className="font-semibold text-mine-shaft-200">
           {props.expectedCtc}
         </div>
@@ -57,39 +58,67 @@ const TalentCard = (props: any) => {
           {props.location}
         </div>
       </div>
-
+      }
       <Divider size="xs" color="mine-shaft.7" />
 
       
       {/* Actions */}
       <div className="flex gap-3">
-        <Link to="/talent-profile" className="flex-1">
-          <Button color="royal-purple.4" variant="outline" fullWidth>
-            Profile
-          </Button>
-        </Link>
+        {!props.invited && (
+          <>
+            <Link to="/talent-profile" className="flex-1">
+              <Button color="royal-purple.4" variant="outline" fullWidth>
+                Profile
+              </Button>
+            </Link>
 
-        {props.posted ? (
-          <Button onClick={open}
-            rightSection={<IconCalendarMonth className="w-5 h-5" />}
-            className="flex-1"
-            color="royal-purple.4"
-            variant="light"
-            fullWidth
-          >
-            Schedule
-          </Button>
-        ) : (
-          <Button
-            className="flex-1"
-            color="royal-purple.4"
-            variant="light"
-            fullWidth
-          >
-            Message
-          </Button>
+            {props.posted ? (
+              <Button
+                onClick={open}
+                rightSection={<IconCalendarMonth className="w-5 h-5" />}
+                color="royal-purple.4"
+                variant="light"
+                fullWidth
+                className="flex-1"
+              >
+                Schedule
+              </Button>
+            ) : (
+              <Button
+                color="royal-purple.4"
+                variant="light"
+                fullWidth
+                className="flex-1"
+              >
+                Message
+              </Button>
+            )}
+          </>
+        )}
+
+        {props.invited && (
+          <>
+            <Button
+              color="royal-purple.4"
+              variant="outline"
+              fullWidth
+              className="flex-1"
+            >
+              Accept
+            </Button>
+
+            <Button
+              color="royal-purple.4"
+              variant="light"
+              fullWidth
+              className="flex-1"
+            >
+              Reject
+            </Button>
+          </>
         )}
       </div>
+
        <Modal opened={opened} onClose={close} title="Schedule Interview" centered>
         {/* Modal content */}
         <div className="flex flex-col gap-4">
