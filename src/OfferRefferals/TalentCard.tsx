@@ -1,8 +1,14 @@
-import { IconHeart, IconMapPin } from "@tabler/icons-react";
-import { Avatar, Button, Divider, Text } from '@mantine/core';
+import { IconCalendarMonth, IconHeart, IconMapPin } from "@tabler/icons-react";
+import { Avatar, Button, Divider, Modal, Text } from '@mantine/core';
 import { Link } from "react-router-dom";
+import { useDisclosure } from "@mantine/hooks";
+import { DateInput, TimeInput } from "@mantine/dates";
+import { useRef, useState } from "react";
 
 const TalentCard = (props: any) => {
+  const [opened, { open, close }] = useDisclosure(false);
+  const [value, setValue] = useState<string | null>(null);
+  const ref = useRef<HTMLInputElement>(null);
   return (
     <div className="bg-mine-shaft-900 p-4 w-full h-auto flex flex-col gap-3 rounded-lg hover:shadow-[0_0_5px_1px_purple] !shadow-royal-purple-400 transition duration-300 ease-in-out min-h-[260px]">
       
@@ -54,6 +60,7 @@ const TalentCard = (props: any) => {
 
       <Divider size="xs" color="mine-shaft.7" />
 
+      
       {/* Actions */}
       <div className="flex gap-3">
         <Link to="/talent-profile" className="flex-1">
@@ -61,10 +68,49 @@ const TalentCard = (props: any) => {
             Profile
           </Button>
         </Link>
-        <Button className="flex-1" color="royal-purple.4" variant="light" fullWidth>
-          Message
-        </Button>
+
+        {props.posted ? (
+          <Button onClick={open}
+            rightSection={<IconCalendarMonth className="w-5 h-5" />}
+            className="flex-1"
+            color="royal-purple.4"
+            variant="light"
+            fullWidth
+          >
+            Schedule
+          </Button>
+        ) : (
+          <Button
+            className="flex-1"
+            color="royal-purple.4"
+            variant="light"
+            fullWidth
+          >
+            Message
+          </Button>
+        )}
       </div>
+       <Modal opened={opened} onClose={close} title="Schedule Interview" centered>
+        {/* Modal content */}
+        <div className="flex flex-col gap-4">
+             <DateInput
+              value={value}
+              minDate={new Date()}
+              onChange={setValue}
+              label="Date "
+              placeholder="Enter Date"
+            /> 
+            <TimeInput label="Time" ref={ref} onClick={() => ref.current?.showPicker()} />
+            <Button
+            color="royal-purple.4"
+            variant="light"
+            fullWidth
+          >
+            Schedule
+          </Button>
+        
+        </div>
+      </Modal>
     </div>
   );
 };
